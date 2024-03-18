@@ -1,12 +1,44 @@
 const mongoose = require('mongoose');
+
 const UserSchema = new mongoose.Schema({
-    UserID: { type: Schema.Types.ObjectId, required: true, unique: true },
-    lastName: { type: String, required: true },
-    firstName: { type: String, required: true },
-    dateOfBirth: { type: Date, required: true },
-    gender: { type: String, required: true },
-    address: { type: String, required: true },
-    phoneNumber: { type: String, required: true }
-  });
+    username: { type: String, required: true, unique: true },
+    fullname: { type: String },
+    address: { type: String },
+    phonenumber: { type: String },
+    password: { type: String, required: true }
+});
+
+
+UserSchema.statics.findById = async function(userId) {
+    try {
+        return await this.findOne({ _id: userId });
+    } catch (error) {
+        throw new Error('Could not find user by ID');
+    }
+};
+
+UserSchema.statics.findByName = async function(fullname) {
+    try {
+        return await this.find({ fullname: fullname });
+    } catch (error) {
+        throw new Error('Could not find user by name');
+    }
+};
+
+UserSchema.statics.deleteUserById = async function(userId) {
+    try {
+        return await this.deleteOne({ _id: userId });
+    } catch (error) {
+        throw new Error('Could not delete user by ID');
+    }
+};
+
+UserSchema.statics.editUserById = async function(userId, updateData) {
+    try {
+        return await this.findOneAndUpdate({ _id: userId }, updateData, { new: true });
+    } catch (error) {
+        throw new Error('Could not edit user by ID');
+    }
+};
 
 module.exports = mongoose.model('User', UserSchema);
