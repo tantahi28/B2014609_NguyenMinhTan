@@ -4,7 +4,7 @@ const User = require('../models/User')
 
 async function isAuth(req, res, next) {
     if(req.user) return next();
-    const token = req.header("Authorization").replace('Bearer ', '') || req.cookies?.jwt;
+    const token = req.headers?.authorization?.replace('Bearer ', '') || req.cookies?.jwt
     // console.log(req.header("Authorization"))
     // const token = req.headers.authorization.replace('Bearer ', '')
 
