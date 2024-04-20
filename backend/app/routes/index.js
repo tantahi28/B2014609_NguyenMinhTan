@@ -3,6 +3,8 @@ const router = express.Router();
 const authRoute = require('./auth')
 const bookRoute = require('./book')
 const genreRoute = require('./genre')
+const cartRoute = require('./cart')
+const orderRoute = require('./order')
 
 router.use('/test', (req, res, next) => {
     res.status(200).json({
@@ -11,7 +13,8 @@ router.use('/test', (req, res, next) => {
 });
 
 router.use('/auth', authRoute);
-router.use('/book', bookRoute);
-router.use('/genre', genreRoute);
-
+router.use('/books', bookRoute);
+router.use('/genres', genreRoute);
+router.use('/cart', cartRoute)
+router.use('/orders', orderRoute)
 module.exports = router;
