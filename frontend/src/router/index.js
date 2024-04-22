@@ -25,8 +25,16 @@ const routes = [
         component: () => import("@/views/index.vue"),
       },
       {
+        path: 'search',
+        component: () => import("@/views/index.vue"),
+      },
+      {
         path: 'cart',
         component: () => import("@/views/Cart.vue"),
+      },
+      {
+        path: 'orders',
+        component: () => import("@/views/Order.vue"),
       },
     ],
   },

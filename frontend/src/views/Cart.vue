@@ -8,7 +8,7 @@
             <div class="col-md-12">
               <div class="table-responsive">
                 <table class="table table-bordered table-hover">
-                  <thead class="text-xs text-white bg-emerald-500">
+                  <thead class="">
                     <tr>
                       <th scope="col" class="px-6 py-3">
                         Tên Sách
@@ -25,7 +25,7 @@
                     <tr v-for="detail in cartStore.details" :key="detail.book._id"
                       class="bg-white border-b">
                       <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        {{ detail.book.name }}
+                        {{ detail.book.title }}
                       </th>
                       <td class="px-6 py-4">
                         {{ detail.book.price }}
@@ -65,6 +65,7 @@
     methods: {
       async buyFromCart() {
         let data = await this.orderService.buyFromCart()
+        this.cartStore.reset();
         if (data.status == 'success') {
           this.$router.push('/')
         }
