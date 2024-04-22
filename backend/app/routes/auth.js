@@ -8,6 +8,6 @@ router.route('/register').post(authController.register)
 
 router.route('/login').post(authController.login)
 
-router.route('/').get(authMiddleware, authController.getMe)
+router.route('/getMe').get(authMiddleware, authController.getMe)
 
 module.exports = router

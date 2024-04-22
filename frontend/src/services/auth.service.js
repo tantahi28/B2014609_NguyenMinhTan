@@ -36,17 +36,17 @@
 
     async _tryLoginWithToken() {
         let rs = await this.api.get('/getMe', {
-        headers: {
-            Authorization: this.authStore.token,
-        },
+            headers: {
+                Authorization: this.authStore.token,
+            },
         })
         if (rs.data.status != 'success') {
-        this.authStore.setToken(null)
-        return
+            this.authStore.setToken(null)
+            return
         }
         if (window.location.pathname.startsWith('/admin') && rs?.data?.data?.user?.role != 'admin') {
-        this.authStore.setToken(null)
-        return
+            this.authStore.setToken(null)
+            return
         }
         this.authStore.user = rs.data.data.user
         this.cartService.refresh()

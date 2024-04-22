@@ -1,4 +1,4 @@
-exports.getOne = function (model) {
+ exports.getOne = function (model) {
     return async function (req, res, next) {
       const doc = await model.findById(req.params.id)
   
@@ -35,13 +35,13 @@ exports.getOne = function (model) {
       let skip = (page - 1) * perPage
   
       const docs = await model
-        .find({ name: { $regex: q, $options: 'i' } })
+        .find({ title: { $regex: q, $options: 'i' } })
         .skip(skip)
         .limit(perPage)
   
       if (!docs) throw new AppError('No document found!', 404)
   
-      const count = await model.find({ name: { $regex: q, $options: 'i' } }).countDocuments()
+      const count = await model.find({ title: { $regex: q, $options: 'i' } }).countDocuments()
       const noPage = Math.ceil(count / perPage)
   
       return res.status(200).json({

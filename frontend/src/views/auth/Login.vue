@@ -6,7 +6,7 @@
             <div class="card" style="border-radius: 1rem;">
               <div class="row g-0">
                 <div class="col-md-6 col-lg-5 d-none d-md-block">
-                  <img src="https://noithatminhkhoi.com/upload/images/59-8065d07da.jpg" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                  <img src="https://img.freepik.com/free-vector/gradient-bookstore-logo_23-2149332421.jpg?size=338&ext=jpg&ga=GA1.1.553209589.1713657600&semt=ais" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                 </div>
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
                   <div class="card-body p-4 p-lg-2 text-black">
@@ -34,8 +34,6 @@
   
                       <a class="small text-muted" href="#!">Quên mật khẩu?</a>
                       <p class="mb-5 pb-lg-2" style="color: #393f81;">Chưa có tài khoản? <router-link to="/auth/register" style="color: #393f81;">Đăng ký ngay</router-link></p>
-                      <a href="#!" class="small text-muted">Terms of use.</a>
-                      <a href="#!" class="small text-muted">Privacy policy</a>
                     </form>
                   </div>
                 </div>

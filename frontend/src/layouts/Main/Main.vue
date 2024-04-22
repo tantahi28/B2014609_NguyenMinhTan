@@ -1,8 +1,7 @@
-<template>
-  
+  <template>
     <div class="homepage position-relative">
       <Header></Header>
-      <div class="container">
+      <div class="container mt-4">
         <router-view></router-view>
       </div>
     </div>
