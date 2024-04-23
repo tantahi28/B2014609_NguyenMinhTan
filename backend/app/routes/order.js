@@ -8,7 +8,7 @@ router.use(authMiddleware)
 
 router
   .route('/')
-  .get(ordersController.getAllPaginate)
+  .get(ordersController.getAll)
   .post(ordersController.createOne)
   .delete(ordersController.deleteOne)
 

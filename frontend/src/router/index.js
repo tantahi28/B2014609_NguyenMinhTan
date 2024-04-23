@@ -17,6 +17,33 @@ const routes = [
     ],
   },
   {
+    path: '/admin',
+    name: 'admin',
+    component: () => import("@/layouts/Admin/Admin.vue"),
+    children: [
+      {
+        path: 'login',
+        component: () => import("@/views/auth/LoginAdmin.vue"),
+      },
+      {
+        path: 'books/create',
+        component: () => import("@/views/admin/BookCreate.vue"),
+      },
+      {
+        path: 'books',
+        component: () => import("@/views/admin/Books.vue"),
+      },
+      {
+        path: 'books/:id',
+        component: () => import("@/views/admin/BookEdit.vue"),
+      },
+      {
+        path: 'orders',
+        component: () => import("@/views/admin/Orders.vue"),
+      },
+    ],
+  },
+  {
     path: '/',
     component: () => import("@/layouts/Main/Main.vue"),
     children: [

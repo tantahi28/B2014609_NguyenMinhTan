@@ -33,13 +33,13 @@
                             required>
                         <button type="submit" class="btn btn-outline-dark">Tìm</button>
                     </form>
-                    <router-link to="/cart" class="my-2 my-lg-0">
-                        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
-                            <i class="bi-cart-fill"></i> Giỏ hàng ({{ cartStore.details?.reduce((p, c) => { return p + c.quantity }, 0)
-                            ?? 0 }})
-                        </button>
-                    </router-link>
                     <div v-if="authStore.user" class="dropdown">
+                        <router-link to="/cart" class="my-2 my-lg-0">
+                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
+                                <i class="bi-cart-fill"></i> Giỏ hàng ({{ cartStore.details?.reduce((p, c) => { return p + c.quantity }, 0)
+                                ?? 0 }})
+                            </button>
+                        </router-link>
                         <router-link to="/orders">
                             <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
                                 Đơn hàng

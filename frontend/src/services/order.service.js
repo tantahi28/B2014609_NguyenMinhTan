@@ -17,6 +17,15 @@ class OrderService {
       })
     ).data
   }
+  async getAllOrder() {
+    return (
+      await this.api.get('/', {
+        headers: {
+          Authorization: this.authStore.token,
+        },
+      })
+    ).data
+  }
   async createOne(data) {
     return (
       await this.api.post('/createOne', data, {
